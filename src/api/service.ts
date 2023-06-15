@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { axiosInstance } from "./axios";
 import { ApiResponse } from "./api-responses";
+import { CATEGORIES } from "./categories";
 
 const productsQueryKey = ["products"];
 
@@ -45,6 +46,7 @@ export const useGetCategories = () => {
   return useQuery({
     queryFn: fetchCategories,
     queryKey: categoriesQueryKey,
+    initialData: [...CATEGORIES],
   });
 };
 
